@@ -374,8 +374,10 @@ ul { margin: 0; padding: 0; list-style: none; }
 .fact .v { font-size: 1.05rem; font-weight: 800; color: #fff; margin-top: 0.15rem; }
 
 /* tour body layout */
-.tour-layout { display: grid; grid-template-columns: 1fr 360px; gap: clamp(1.8rem, 4vw, 3.2rem); align-items: start; }
-@media (max-width: 900px) { .tour-layout { grid-template-columns: 1fr; } }
+/* align-items: stretch lets the booking aside fill the column height, giving
+   the sticky card room to travel until the section ends (before the gallery) */
+.tour-layout { display: grid; grid-template-columns: 1fr 360px; gap: clamp(1.8rem, 4vw, 3.2rem); align-items: stretch; }
+@media (max-width: 900px) { .tour-layout { grid-template-columns: 1fr; } .booking { position: static; } }
 
 .prose h2 { font-size: clamp(1.7rem, 3.2vw, 2.3rem); margin: 0 0 1rem; }
 .prose h3 { font-size: 1.35rem; margin: 2.4rem 0 1rem; }
