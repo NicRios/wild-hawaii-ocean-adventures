@@ -446,6 +446,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .booking .price-block { padding: 1.3rem 1.5rem 0.4rem; }
 .booking .price-lbl { font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 800; }
 .booking .price { font-family: var(--serif); color: var(--coral); font-size: 1.7rem; font-weight: 700; }
+.booking .price-observer { font-size: 0.84rem; color: var(--muted); font-weight: 700; margin-top: 0.25rem; }
 .booking .rows { padding: 0.8rem 1.5rem 0; display: grid; gap: 0.7rem; }
 .booking .row { display: flex; justify-content: space-between; gap: 1rem; font-size: 0.9rem; padding-bottom: 0.7rem; border-bottom: 1px solid var(--line-2); }
 .booking .row .k { color: var(--muted); }
