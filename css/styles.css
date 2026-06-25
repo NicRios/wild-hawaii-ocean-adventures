@@ -197,8 +197,15 @@ ul { margin: 0; padding: 0; list-style: none; }
 .tour-card .media { position: relative; aspect-ratio: 16 / 10; overflow: hidden; }
 .tour-card .media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
 .tour-card:hover .media img { transform: scale(1.04); }
+/* hover overlay — fades in over the image; tag stays above it (z-index) */
+.tour-card .media::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(180deg, rgba(13,58,79,0) 30%, rgba(13,58,79,0.55) 100%);
+  opacity: 0; transition: opacity 0.3s ease;
+}
+.tour-card:hover .media::after { opacity: 1; }
 .tag {
-  position: absolute; top: 0.85rem; left: 0.85rem;
+  position: absolute; top: 0.85rem; left: 0.85rem; z-index: 3;
   background: var(--ocean-deep); color: #fff; font-size: 0.66rem; font-weight: 800;
   letter-spacing: 0.12em; text-transform: uppercase; padding: 0.4em 0.7em; border-radius: 5px;
 }
@@ -214,8 +221,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* ---------- Story (dark, full-height split image) ---------- */
 .story { background: var(--charcoal); color: var(--on-dark); }
 .story-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; }
-.story-media { position: relative; overflow: hidden; min-height: 440px; }
-.story-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.story-media { position: relative; overflow: hidden; min-height: 600px; }
+.story-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 /* fade the image into the dark panel near its inner edge — no hard seam */
 .story-media::after {
   content: ""; position: absolute; inset: 0; pointer-events: none;
@@ -238,7 +245,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .gallery {
   display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.9rem; margin-top: 2.4rem;
 }
-.gallery a { display: block; border-radius: 10px; overflow: hidden; }
+.gallery a { display: block; border-radius: 0; overflow: hidden; }
 .gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease, filter 0.3s ease; }
 .gallery a:hover img { transform: scale(1.06); }
 .gallery .g-half  { grid-column: span 3; aspect-ratio: 16 / 9; }   /* rows 1 & 4: two across */
@@ -468,8 +475,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 /* contact (blue band w/ wave) */
 .contact { position: relative; background: var(--ocean); color: #fff; }
-.contact-wave { display: block; width: 100%; height: 56px; fill: var(--cream-2); margin-bottom: -1px; }
-.contact-wave.from-cream { fill: var(--cream); }
+.contact-wave { display: block; width: 100%; height: 56px; fill: var(--ocean); margin-top: -1px; margin-bottom: -1px; }
+.contact-wave.from-cream { fill: var(--ocean); }
 .contact-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(1.6rem, 4vw, 3.2rem); align-items: start; padding-bottom: 1rem; }
 @media (max-width: 820px) { .contact-grid { grid-template-columns: 1fr; } }
 .contact h2 { color: #fff; }
