@@ -58,14 +58,9 @@ function svg(label, paletteKey, w = 1200, h = 900) {
 </svg>`;
 }
 
+// Note: the hero, logo, six tour-card images, and the story image are now
+// real photography (.jpg/.png). Only the gallery tiles remain placeholders.
 const IMAGES = [
-  ["tour-captain-cook",     "Captain Cook Snorkel",   "reef"],
-  ["tour-coastal-marine",   "Coastal Marine Life",    "teal"],
-  ["tour-manta-ray",        "Manta Ray Night Snorkel","night"],
-  ["tour-offshore-blue",    "Offshore Blue Water",    "azure"],
-  ["tour-private-charters", "Private Charters",       "deep"],
-  ["tour-whale-watching",   "Whale Watching",         "storm"],
-  ["story-ocean",           "Free Diver & Reef Shark","deep"],
   ["gallery-1",             "Humpback Whale",         "storm"],
   ["gallery-2",             "Green Sea Turtle",       "emerald"],
   ["gallery-3",             "Reef Shark",             "deep"],
