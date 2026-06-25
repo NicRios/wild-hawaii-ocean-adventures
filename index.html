@@ -146,15 +146,17 @@
     </section>
 
     <!-- ===================== STORY ===================== -->
-    <section class="section story" id="story">
-      <div class="wrap story-grid">
-        <div class="story-media reveal"><img src="images/story-ocean.jpg" alt="Free diver swimming beside a reef shark" /></div>
-        <div class="reveal">
-          <p class="eyebrow">Our Story</p>
-          <h2 class="h-section">We are Wild Hawaii<br />Ocean Adventures</h2>
-          <p>We are uniquely capable of providing an ocean experience like no other company in Kona. We do this through a combination of our equipment and our talented crew.</p>
-          <p>Our boats are built to safely reach the best spots, and our guides are seasoned naturalists, expert freedivers, professional photographers, and experienced captains — most with decades on these waters. We keep our groups small so every guest gets a real, unhurried encounter with the ocean.</p>
-          <a class="btn btn-outline" href="#tours" style="border-color:#f0a983;color:#f0a983;">View Tours</a>
+    <section class="story" id="story">
+      <div class="story-grid">
+        <div class="story-media"><img src="images/story-ocean.jpg" alt="A manta ray gliding through sunlit blue water" /></div>
+        <div class="story-text">
+          <div class="story-text-inner reveal">
+            <p class="eyebrow">Our Story</p>
+            <h2 class="h-section">We are Wild Hawaii<br />Ocean Adventures</h2>
+            <p>We are uniquely capable of providing an ocean experience like no other company in Kona. We do this through a combination of our equipment and our talented crew.</p>
+            <p>Our boats are built to safely reach the best spots, and our guides are seasoned naturalists, expert freedivers, professional photographers, and experienced captains — most with decades on these waters. We keep our groups small so every guest gets a real, unhurried encounter with the ocean.</p>
+            <a class="btn btn-outline" href="#tours" style="border-color:#f0a983;color:#f0a983;">View Tours</a>
+          </div>
         </div>
       </div>
     </section>
@@ -181,24 +183,20 @@
     <!-- ===================== REVIEWS ===================== -->
     <section class="section reviews" id="reviews">
       <div class="wrap">
-        <div class="reviews-head reveal">
-          <div>
-            <p class="eyebrow">What People Say</p>
-            <h2 class="h-section">Stories From the Water</h2>
-          </div>
-          <div class="carousel-nav">
-            <button type="button" class="car-btn" data-car-prev aria-label="Previous reviews">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
-            </button>
-            <button type="button" class="car-btn" data-car-next aria-label="Next reviews">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
-            </button>
-          </div>
-        </div>
+        <p class="eyebrow reveal">What People Say</p>
+        <h2 class="h-section reveal">Stories From the Water</h2>
 
         <div class="carousel" data-carousel>
-          <div class="carousel-track" data-car-track tabindex="0" aria-label="Customer reviews">
+          <div class="carousel-viewport">
+            <button type="button" class="car-btn car-arrow car-prev" data-car-prev aria-label="Previous reviews">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+            </button>
+            <button type="button" class="car-btn car-arrow car-next" data-car-next aria-label="Next reviews">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+            </button>
+            <div class="carousel-track" data-car-track tabindex="0" aria-label="Customer reviews">
 
+            <div class="car-slide">
             <div class="review">
               <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
               <p>My manta night snorkel was absolutely magical. We saw over a dozen mantas gliding just beneath us — I couldn't believe how close they came. The crew was warm, incredibly knowledgeable, and made sure we felt safe the entire time. Hands down the best experience I've had in Hawaii.</p>
@@ -222,7 +220,9 @@
               <p>The Offshore Blue Water Adventure pushed me out of my comfort zone in the best possible way. Open blue water snorkeling sounds intimidating, but the guides made it feel safe and exhilarating. We encountered a massive pod of striped dolphins, a wahoo, and something I still can't fully identify. Unreal.</p>
               <div class="who"><span class="avatar">DK</span><div><b>David K.</b><span class="tour-ref">Offshore Blue Water Adventure</span></div></div>
             </div>
+            </div>
 
+            <div class="car-slide">
             <div class="review">
               <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
               <p>We chartered the boat for our anniversary and the crew thought of everything. Calm water, perfect light, and a pod of dolphins that stayed with us for what felt like forever. It was like having our own private slice of the ocean — worth every penny.</p>
@@ -246,7 +246,9 @@
               <p>I was nervous about getting in the water at night, but the guides were calm and reassuring from start to finish. Then a manta did a slow backflip right under me and any nerves vanished. Genuinely a bucket-list moment I'll never forget.</p>
               <div class="who"><span class="avatar">PN</span><div><b>Priya N.</b><span class="tour-ref">Manta Ray Night Snorkel</span></div></div>
             </div>
+            </div>
 
+            </div>
           </div>
           <div class="carousel-dots" data-car-dots aria-hidden="true"></div>
         </div>
