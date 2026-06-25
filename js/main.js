@@ -80,6 +80,78 @@
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
 
+  /* --- Reviews carousel (scroll-snap + arrows + dots) --- */
+  var carousel = document.querySelector("[data-carousel]");
+  if (carousel) {
+    // the prev/next buttons live in the section header, outside [data-carousel]
+    var scope = carousel.closest("section") || document;
+    var track = carousel.querySelector("[data-car-track]");
+    var btnPrev = scope.querySelector("[data-car-prev]");
+    var btnNext = scope.querySelector("[data-car-next]");
+    var dotsWrap = carousel.querySelector("[data-car-dots]");
+    var cards = track ? Array.prototype.slice.call(track.children) : [];
+
+    if (track && cards.length) {
+      var stepSize = function () {
+        var cs = getComputedStyle(track);
+        var gap = parseFloat(cs.columnGap || cs.gap || "0") || 0;
+        return cards[0].getBoundingClientRect().width + gap;
+      };
+      var perView = function () { return Math.max(1, Math.round(track.clientWidth / stepSize())); };
+      var maxIndex = function () { return Math.max(0, cards.length - perView()); };
+      var current = function () { return Math.min(Math.round(track.scrollLeft / stepSize()), maxIndex()); };
+
+      var goTo = function (i) {
+        var mi = maxIndex();
+        if (i < 0) i = mi;       // wrap to end
+        if (i > mi) i = 0;       // wrap to start
+        track.scrollTo({ left: i * stepSize() });
+      };
+
+      if (btnNext) btnNext.addEventListener("click", function () { goTo(current() + 1); });
+      if (btnPrev) btnPrev.addEventListener("click", function () { goTo(current() - 1); });
+
+      var updateDots = function () {
+        if (!dotsWrap) return;
+        var c = current();
+        Array.prototype.forEach.call(dotsWrap.children, function (d, i) {
+          d.classList.toggle("active", i === c);
+        });
+      };
+      var buildDots = function () {
+        if (!dotsWrap) return;
+        dotsWrap.innerHTML = "";
+        var n = maxIndex() + 1;
+        for (var i = 0; i < n; i++) {
+          (function (idx) {
+            var b = document.createElement("button");
+            b.type = "button";
+            b.className = "car-dot";
+            b.setAttribute("aria-label", "Go to review set " + (idx + 1));
+            b.addEventListener("click", function () { goTo(idx); });
+            dotsWrap.appendChild(b);
+          })(i);
+        }
+        updateDots();
+      };
+
+      var ticking = false;
+      track.addEventListener("scroll", function () {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function () { updateDots(); ticking = false; });
+      }, { passive: true });
+
+      var resizeTimer;
+      window.addEventListener("resize", function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(buildDots, 150);
+      });
+
+      buildDots();
+    }
+  }
+
   /* --- Footer year --- */
   var yr = document.getElementById("year");
   if (yr) yr.textContent = new Date().getFullYear();
