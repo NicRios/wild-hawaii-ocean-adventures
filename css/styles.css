@@ -462,7 +462,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* tour gallery (varied) */
 .tour-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1rem; }
 .tour-gallery a { border-radius: 10px; overflow: hidden; aspect-ratio: 3 / 2; }
-.tour-gallery a.wide { grid-column: 1 / -1; aspect-ratio: 5 / 2; }
+.tour-gallery a.wide { grid-column: 1 / -1; aspect-ratio: 2 / 1; }
 .tour-gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
 .tour-gallery a:hover img { transform: scale(1.05); }
 
