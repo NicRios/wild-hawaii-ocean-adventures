@@ -59,7 +59,7 @@ body {
 img, svg, iframe { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; cursor: pointer; }
-h1, h2, h3, h4 { font-family: var(--serif); color: var(--ink); font-weight: 700; line-height: 1.12; margin: 0; }
+h1, h2, h3, h4 { font-family: var(--serif); color: var(--ink); font-weight: 700; line-height: 1.06; margin: 0; }
 p { margin: 0 0 1.1em; }
 ul { margin: 0; padding: 0; list-style: none; }
 
@@ -72,8 +72,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-size: 0.74rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--coral);
-  margin: 0 0 0.85rem;
+  color: var(--ocean-light);
+  margin: 0 0 0.4rem;
 }
 .eyebrow.on-dark { color: #f0a983; }
 .eyebrow.muted { color: var(--muted); }
@@ -181,6 +181,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .trust-item { display: flex; align-items: center; gap: 0.8rem; justify-content: center; text-align: left; }
 .trust-item svg { width: 30px; height: 30px; fill: var(--ocean-light); flex: none; }
+.trust-item > div { line-height: 1.25; }
 .trust-item b { display: block; color: var(--ink); font-size: 0.92rem; font-weight: 800; }
 .trust-item span { font-size: 0.78rem; color: var(--muted); }
 @media (max-width: 760px) { .trust-row { grid-template-columns: repeat(2, 1fr); gap: 1.2rem 1rem; } }
@@ -267,7 +268,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 /* ---------- Testimonials ---------- */
 .reviews { background: var(--cream-2); }
-.reviews .eyebrow { margin-bottom: 0.85rem; }
+.reviews .eyebrow { margin-bottom: 0.4rem; }
 
 /* carousel arrow buttons (positioned on the sides of the track) */
 .car-btn {
