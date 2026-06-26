@@ -485,7 +485,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 /* contact (blue band w/ wave) */
 .contact { position: relative; background: var(--ocean); color: #fff; }
-.contact-wave { display: block; width: 100%; height: 104px; fill: var(--ocean); background-color: var(--cream-2); margin-top: -1px; margin-bottom: -1px; }
+.contact-wave { display: block; width: 100%; height: 132px; fill: var(--ocean); background-color: var(--cream-2); margin-top: -1px; margin-bottom: -1px; }
 /* extra breathing room between the section above and the contact wave (stays cream-2, no seam) */
 .section:has(+ .contact-wave) { padding-bottom: clamp(4rem, 8vw, 7rem); }
 .contact-wave.from-cream { fill: var(--ocean); }
