@@ -263,7 +263,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .gallery a { display: block; border-radius: 0; overflow: hidden; }
 .gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease, filter 0.3s ease; }
-.gallery a:hover img { transform: scale(1.03); }
+.gallery a:hover img { transform: scale(1.015); }
 .gallery .g-half  { grid-column: span 3; aspect-ratio: 16 / 9; }   /* rows 1 & 4: two across */
 .gallery .g-third { grid-column: span 2; aspect-ratio: 1 / 1; }    /* row 2: three across (taller) */
 .gallery .g-full  { grid-column: span 6; aspect-ratio: 16 / 5; }   /* row 3: full width */
@@ -277,7 +277,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .photo-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; }
 .photo-strip a { display: block; border-radius: 0; overflow: hidden; aspect-ratio: 1 / 1; }
 .photo-strip img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
-.photo-strip a:hover img { transform: scale(1.03); }
+.photo-strip a:hover img { transform: scale(1.015); }
 @media (max-width: 640px) { .photo-strip { grid-template-columns: 1fr; gap: 0.7rem; } .photo-strip a { aspect-ratio: 16 / 9; } }
 
 /* ---------- Testimonials ---------- */
@@ -437,7 +437,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 @media (max-width: 900px) { .tour-layout { grid-template-columns: 1fr; } .booking { position: static; } }
 
 .prose h2 { font-size: clamp(1.7rem, 3.2vw, 2.3rem); margin: 0 0 1rem; }
-.prose h3 { font-size: 1.35rem; margin: 4rem 0 1.5rem; }
+.prose h3 { font-size: 1.65rem; margin: 4rem 0 1.5rem; }
 .prose p { color: var(--body); }
 .prose .eyebrow { margin-bottom: 0.6rem; }
 
@@ -452,7 +452,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .two-col h3 { margin-top: 0; }
 /* keep both columns equal height with tops + bottoms aligned even if an item wraps */
 .two-col > div { display: flex; flex-direction: column; }
-.two-col > div .checklist { flex: 1; align-content: space-between; }
+.two-col > div .checklist { flex: 1; align-content: space-between; gap: 1.2rem; }
 @media (max-width: 560px) { .two-col { grid-template-columns: 1fr; } }
 
 /* itinerary timeline */
@@ -492,7 +492,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .tour-gallery a { border-radius: 0; overflow: hidden; aspect-ratio: 3 / 2; }
 .tour-gallery a.wide { grid-column: 1 / -1; aspect-ratio: 2 / 1; }
 .tour-gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
-.tour-gallery a:hover img { transform: scale(1.05); }
+.tour-gallery a:hover img { transform: scale(1.02); }
 
 /* directions + map */
 .directions { background: var(--cream-2); }
@@ -502,6 +502,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 .dir-grid ol { padding-left: 1.1rem; margin: 1rem 0; color: var(--body); }
 .dir-grid ol li { margin-bottom: 0.5rem; }
 .dir-grid .addr { font-weight: 800; color: var(--ink); }
+/* the maps button uses the deep-blue eyebrow color for its stroke + label */
+.directions .btn-outline { color: var(--ocean); border-color: var(--ocean); }
 .map-frame { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); aspect-ratio: 4 / 3; border: 0; }
 .map-frame iframe { width: 100%; height: 100%; border: 0; }
 
@@ -546,10 +548,12 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* related */
 .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 2.4rem; }
 @media (max-width: 860px) { .related-grid { grid-template-columns: 1fr; } }
-.related-grid .tour-card h3 { font-size: 1.2rem; margin-bottom: 2.25rem; }
-.related-grid .tour-card .meta { color: var(--coral); }
-/* taller media on the related ("You May Also Like") cards */
+.related-grid .tour-card { border-radius: 4px; }
 .related-grid .tour-card .media { aspect-ratio: 1 / 1; }
+/* taller white text panel; meta+title vertically centered (auto margins on both ends), buttons pinned to the bottom */
+.related-grid .tour-card .body { min-height: 210px; }
+.related-grid .tour-card .meta { color: var(--coral); margin-top: auto; margin-bottom: 0.45rem; }
+.related-grid .tour-card h3 { font-size: 1.4rem; font-weight: 800; line-height: 1.2; margin-bottom: 0; max-width: 15ch; }
 /* "Learn More" on the related (other-tour) cards reads as an outlined button */
 .related-grid .learn,
 .tour-card .actions .learn { border: 1.5px solid rgba(204, 204, 204, 0.5); border-radius: 8px; padding: 0.62em 1em; color: #888888; transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease; }
@@ -574,7 +578,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .team .page-intro { max-width: none; }
 
 /* team */
-.team { background: var(--cream-2); }
+.team { background: var(--white); }
 .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; margin-top: 2.4rem; }
 @media (max-width: 760px) { .team-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 440px) { .team-grid { grid-template-columns: 1fr; } }
