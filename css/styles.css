@@ -352,14 +352,14 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* ---------- CTA band ---------- */
 .cta-band {
   position: relative; color: #fff; text-align: center; overflow: hidden;
-  min-height: clamp(540px, 60vw, 880px);   /* taller banner, ~Figma 1440×915 proportion */
+  min-height: clamp(420px, 44vw, 620px);
   display: flex; align-items: center;
   background-color: #0a2a3c;
   background-image:
     linear-gradient(180deg, rgba(9,30,44,0.52), rgba(9,30,44,0.66)),
     url("../images/cta-sharks.jpg");
   background-size: cover, cover;
-  background-position: center, center;
+  background-position: center, center 28%;   /* nudge the image down so the lead shark isn't cropped */
   background-repeat: no-repeat, no-repeat;
 }
 .cta-band .inner { padding-block: clamp(3.6rem, 8vw, 6rem); }
@@ -533,9 +533,12 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* =====================================================================
    About page
    ===================================================================== */
+/* about page: image stack starts flush under the nav; the text column keeps a small gap */
+.about-top { padding-top: 0; }
+.about-top .prose { padding-top: clamp(1.75rem, 3vw, 2.75rem); }
 .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(1.8rem, 4vw, 3.4rem); align-items: start; }
 .about-grid .prose p { color: var(--body); }
-.about-stack { display: grid; gap: 1rem; position: sticky; top: calc(var(--nav-h) + 20px); }
+.about-stack { display: grid; gap: 1rem; position: sticky; top: var(--nav-h); }
 .about-stack img { width: 100%; border-radius: var(--radius); display: block; aspect-ratio: 3 / 2; object-fit: cover; box-shadow: var(--shadow-sm); }
 @media (max-width: 820px) { .about-grid { grid-template-columns: 1fr; } .about-stack { position: static; } }
 
