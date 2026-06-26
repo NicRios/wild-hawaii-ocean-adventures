@@ -170,8 +170,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 /* same total height as the original centered hero (so the image crop is unchanged),
    just rebalanced to nudge the text up a little */
-.hero-inner { padding-block: clamp(3.5rem, 11vw, 7rem) clamp(5.5rem, 15vw, 11rem); }
-.hero h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); margin-bottom: 0.5rem; color: #fff; text-shadow: 0 2px 30px rgba(0,0,0,0.4); }
+.hero-inner { padding-block: clamp(3.25rem, 10vw, 6.5rem) clamp(7rem, 17vw, 13.5rem); }
+.hero h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); margin-bottom: 1.5rem; color: #fff; text-shadow: 0 2px 30px rgba(0,0,0,0.4); }
 .hero .eyebrow { color: #f3cbb4; margin-bottom: 1rem; }
 .hero p.lead { color: #e7eef0; margin: 0 auto 2rem; max-width: 54ch; }
 .hero-cta { display: flex; gap: 0.9rem; justify-content: center; flex-wrap: wrap; }
