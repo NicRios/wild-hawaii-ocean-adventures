@@ -527,8 +527,10 @@ ul { margin: 0; padding: 0; list-style: none; }
 .related-grid .tour-card h3 { font-size: 1.2rem; }
 .related-grid .tour-card .meta { color: var(--coral); }
 /* "Learn More" on the related (other-tour) cards reads as an outlined button */
-.related-grid .learn { border: 1.5px solid var(--ink); border-radius: 8px; padding: 0.62em 1em; color: var(--ink); transition: background 0.2s ease, color 0.2s ease; }
-.related-grid .learn:hover { background: var(--ink); color: #fff; }
+.related-grid .learn,
+.tour-card .actions .learn { border: 1.5px solid var(--ink); border-radius: 8px; padding: 0.62em 1em; color: var(--ink); transition: background 0.2s ease, color 0.2s ease; }
+.related-grid .learn:hover,
+.tour-card .actions .learn:hover { background: var(--ink); color: #fff; }
 
 /* =====================================================================
    About page

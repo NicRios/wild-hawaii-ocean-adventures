@@ -8,3 +8,6 @@ Thumbs.db
 # Node (only used by the placeholder generator)
 node_modules/
 npm-debug.log*
+
+# Local preview harness config
+.claude/
