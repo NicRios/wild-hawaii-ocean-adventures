@@ -99,7 +99,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .btn-primary:hover { background: var(--coral-dark); }
 .btn-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,0.6); }
 .btn-ghost:hover { background: rgba(255,255,255,0.12); border-color: #fff; }
-.btn-outline { background: transparent; color: #cccccc; border-color: rgba(204, 204, 204, 0.5); }
+.btn-outline { background: transparent; color: #888888; border-color: rgba(204, 204, 204, 0.5); }
 .btn-outline:hover { background: #004e72; border-color: #004e72; color: #fff; }
 .btn-block { display: flex; width: 100%; }
 .btn-sm { padding: 0.7em 1.15em; font-size: 0.76rem; }
@@ -194,6 +194,11 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* ---------- Tour grid (home) ---------- */
 .tour-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.6rem; margin-top: 2.6rem; }
 @media (max-width: 760px) { .tour-grid { grid-template-columns: 1fr; } }
+/* taller tour cards with more breathing room between meta, title, description, and buttons */
+.tour-grid .tour-card .media { aspect-ratio: 3 / 2; }
+.tour-grid .tour-card .meta { margin-bottom: 0.7rem; }
+.tour-grid .tour-card h3 { margin-bottom: 0.95rem; }
+.tour-grid .tour-card p { margin-bottom: 2rem; }
 
 .tour-card {
   background: var(--card); border-radius: var(--radius); overflow: hidden;
@@ -218,7 +223,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .tag.coral { background: var(--coral); }
 .tour-card .body { padding: 1.3rem 1.4rem 1.5rem; display: flex; flex-direction: column; flex: 1; }
-.tour-card .meta { font-size: 0.74rem; font-weight: 800; letter-spacing: 0.04em; color: var(--muted); text-transform: uppercase; margin-bottom: 0.5rem; }
+.tour-card .meta { font-size: 0.74rem; font-weight: 800; letter-spacing: 0.04em; color: var(--coral); text-transform: uppercase; margin-bottom: 0.5rem; }
 .tour-card h3 { font-size: 1.45rem; margin-bottom: 0.5rem; }
 .tour-card p { font-size: 0.95rem; color: var(--body); margin-bottom: 1.2rem; }
 .tour-card .actions { margin-top: auto; display: flex; gap: 0.6rem; align-items: center; }
@@ -534,7 +539,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .related-grid .tour-card .media { aspect-ratio: 1 / 1; }
 /* "Learn More" on the related (other-tour) cards reads as an outlined button */
 .related-grid .learn,
-.tour-card .actions .learn { border: 1.5px solid rgba(204, 204, 204, 0.5); border-radius: 8px; padding: 0.62em 1em; color: #cccccc; transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease; }
+.tour-card .actions .learn { border: 1.5px solid rgba(204, 204, 204, 0.5); border-radius: 8px; padding: 0.62em 1em; color: #888888; transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease; }
 .related-grid .learn:hover,
 .tour-card .actions .learn:hover { background: #004e72; border-color: #004e72; color: #fff; }
 
