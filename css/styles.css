@@ -99,7 +99,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .btn-primary:hover { background: var(--coral-dark); }
 .btn-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,0.6); }
 .btn-ghost:hover { background: rgba(255,255,255,0.12); border-color: #fff; }
-.btn-outline { background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn-outline { background: transparent; color: #cccccc; border-color: rgba(204, 204, 204, 0.5); }
 .btn-outline:hover { background: #004e72; border-color: #004e72; color: #fff; }
 .btn-block { display: flex; width: 100%; }
 .btn-sm { padding: 0.7em 1.15em; font-size: 0.76rem; }
@@ -534,7 +534,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .related-grid .tour-card .media { aspect-ratio: 1 / 1; }
 /* "Learn More" on the related (other-tour) cards reads as an outlined button */
 .related-grid .learn,
-.tour-card .actions .learn { border: 1.5px solid var(--ink); border-radius: 8px; padding: 0.62em 1em; color: var(--ink); transition: background 0.2s ease, color 0.2s ease; }
+.tour-card .actions .learn { border: 1.5px solid rgba(204, 204, 204, 0.5); border-radius: 8px; padding: 0.62em 1em; color: #cccccc; transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease; }
 .related-grid .learn:hover,
 .tour-card .actions .learn:hover { background: #004e72; border-color: #004e72; color: #fff; }
 
