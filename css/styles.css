@@ -359,7 +359,7 @@ ul { margin: 0; padding: 0; list-style: none; }
     linear-gradient(180deg, rgba(9,30,44,0.52), rgba(9,30,44,0.66)),
     url("../images/cta-sharks.jpg");
   background-size: cover, cover;
-  background-position: center, center 28%;   /* nudge the image down so the lead shark isn't cropped */
+  background-position: center, center top;   /* show the top of the image so the lead shark's fin isn't cropped */
   background-repeat: no-repeat, no-repeat;
 }
 .cta-band .inner { padding-block: clamp(3.6rem, 8vw, 6rem); }
