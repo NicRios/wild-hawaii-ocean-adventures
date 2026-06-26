@@ -152,6 +152,23 @@
     }
   }
 
+  /* --- Smooth-scroll for SAME-page anchor links (e.g. the home-page nav).
+     Cross-page links like index.html#gallery don't match a[href^="#"], so they
+     still load the page and jump to the section instantly. --- */
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    if (a.classList.contains("skip")) return; // keep the skip link instant/focusable
+    a.addEventListener("click", function (e) {
+      var hash = a.getAttribute("href");
+      if (hash.length < 2) return;
+      var target = document.getElementById(hash.slice(1));
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+      if (history.replaceState) history.replaceState(null, "", hash);
+    });
+  });
+
   /* --- Footer year --- */
   var yr = document.getElementById("year");
   if (yr) yr.textContent = new Date().getFullYear();

@@ -40,7 +40,7 @@
   --gutter: clamp(1.1rem, 4vw, 2.5rem);
   --radius: 14px;
   --radius-sm: 9px;
-  --nav-h: 94px;          /* header height — referenced by hero offsets, mobile menu, sticky booking card */
+  --nav-h: 90px;          /* header height — referenced by hero offsets, mobile menu, sticky booking card */
 }
 
 /* ---------- Reset ---------- */
@@ -168,7 +168,9 @@ ul { margin: 0; padding: 0; list-style: none; }
   background-position: center, center;
   background-repeat: no-repeat, no-repeat;
 }
-.hero-inner { padding-block: clamp(2.25rem, 6vw, 3.75rem) clamp(6rem, 15vw, 10.5rem); }
+/* same total height as the original centered hero (so the image crop is unchanged),
+   just rebalanced to nudge the text up a little */
+.hero-inner { padding-block: clamp(3.5rem, 11vw, 7rem) clamp(5.5rem, 15vw, 11rem); }
 .hero h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); margin-bottom: 0.5rem; color: #fff; text-shadow: 0 2px 30px rgba(0,0,0,0.4); }
 .hero .eyebrow { color: #f3cbb4; margin-bottom: 1rem; }
 .hero p.lead { color: #e7eef0; margin: 0 auto 2rem; max-width: 54ch; }
@@ -369,7 +371,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 .site-footer { background: var(--footer); color: var(--on-dark-mut); padding-block: 3.2rem 2rem; }
 .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 2rem; }
 .footer-brand .brand { color: #fff; margin-bottom: 1.1rem; display: block; max-width: 21rem; }
-.footer-brand .brand-logo { width: 100%; height: auto; }
+/* the logo art has ~11.75% transparent margin on its left; shift it out so the
+   "W" lines up with the "K" of the blurb below */
+.footer-brand .brand-logo { width: 100%; height: auto; transform: translateX(-11.75%); }
 .footer-brand p { font-size: 0.9rem; max-width: 21rem; color: var(--on-dark-mut); }
 .footer-brand .btn { margin-top: 1.2rem; }
 .footer-col h4 { font-family: var(--sans); color: #fff; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 1rem; }
@@ -426,7 +430,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   content: ""; flex: none; width: 20px; height: 20px; margin-top: 2px; border-radius: 50%;
   background: var(--ocean-light) url("../images/check.svg") center / 12px no-repeat;
 }
-.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem 2.2rem; margin-top: 3.5rem; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem 2.2rem; margin-top: 75px; }
 .two-col h3 { margin-top: 0; }
 @media (max-width: 560px) { .two-col { grid-template-columns: 1fr; } }
 
