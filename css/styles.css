@@ -419,19 +419,22 @@ ul { margin: 0; padding: 0; list-style: none; }
 @media (max-width: 900px) { .tour-layout { grid-template-columns: 1fr; } .booking { position: static; } }
 
 .prose h2 { font-size: clamp(1.7rem, 3.2vw, 2.3rem); margin: 0 0 1rem; }
-.prose h3 { font-size: 1.35rem; margin: 2.4rem 0 1rem; }
+.prose h3 { font-size: 1.35rem; margin: 4rem 0 1.5rem; }
 .prose p { color: var(--body); }
 .prose .eyebrow { margin-bottom: 0.6rem; }
 
 /* checklist + bring list */
-.checklist { display: grid; gap: 0.7rem; margin: 0.5rem 0 0; }
+.checklist { display: grid; gap: 0.7rem; margin: 1rem 0 0; }
 .checklist li { display: flex; gap: 0.7rem; align-items: flex-start; color: var(--body); font-size: 0.97rem; }
 .checklist li::before {
   content: ""; flex: none; width: 20px; height: 20px; margin-top: 2px; border-radius: 50%;
   background: var(--ocean-light) url("../images/check.svg") center / 12px no-repeat;
 }
-.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem 2.2rem; margin-top: 75px; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem 2.2rem; margin-top: 75px; align-items: stretch; }
 .two-col h3 { margin-top: 0; }
+/* keep both columns equal height with tops + bottoms aligned even if an item wraps */
+.two-col > div { display: flex; flex-direction: column; }
+.two-col > div .checklist { flex: 1; align-content: space-between; }
 @media (max-width: 560px) { .two-col { grid-template-columns: 1fr; } }
 
 /* itinerary timeline */
