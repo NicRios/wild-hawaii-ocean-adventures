@@ -516,6 +516,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* extra breathing room between the section above and the contact wave (stays cream-2, no seam) */
 .section:has(+ .contact-wave) { padding-bottom: clamp(4rem, 8vw, 7rem); }
 .contact-wave.from-cream { fill: var(--ocean); }
+/* the stretched wave looks squished on phones — drop it for a clean edge into the blue */
+@media (max-width: 640px) { .contact-wave { display: none; } }
 .contact-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(1.6rem, 4vw, 3.2rem); align-items: start; padding-bottom: 1rem; }
 @media (max-width: 820px) { .contact-grid { grid-template-columns: 1fr; } }
 .contact h2 { color: #fff; }
