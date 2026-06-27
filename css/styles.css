@@ -544,8 +544,28 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* extra breathing room between the section above and the contact wave (stays cream-2, no seam) */
 .section:has(+ .contact-wave) { padding-bottom: clamp(4rem, 8vw, 7rem); }
 .contact-wave.from-cream { fill: var(--ocean); }
-/* the stretched wave looks squished on phones — drop it for a clean edge into the blue */
-@media (max-width: 640px) { .contact-wave { display: none; } }
+/* the stretched 1440-wide desktop wave (90-pt path) looks squished on phones, so hide it
+   and draw a pseudo-element wave that reuses the hero scrim-wave's exact path/viewBox — so
+   the two match on mobile. Blue is baked in; troughs are transparent so the section above
+   (cream-2 or white) shows through. */
+@media (max-width: 640px) {
+  .contact-wave { display: none; }
+  .contact::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    height: 64px;
+    margin-bottom: -1px;
+    background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'><path d='M0 60 V28 C240 8 480 8 720 28 C960 48 1200 48 1440 28 V60 Z' fill='%23004e72'/></svg>") center bottom / 100% 100% no-repeat;
+    pointer-events: none;
+  }
+  /* more breathing room between the map and the wave (the 64px wave was eating the whole gap) */
+  .section:has(+ .contact-wave) { padding-bottom: 7rem; }
+  /* pull "Get In Touch" up closer under the wave (!important overrides the inline padding-top:6rem) */
+  .contact { padding-top: 2.5rem !important; }
+}
 /* on the About page the wave sits under the white team section, so its backdrop
    must be that same near-white — not the tan cream-2 used on the tour pages */
 .team + .contact-wave { background-color: var(--white); }
