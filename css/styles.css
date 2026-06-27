@@ -442,6 +442,14 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .fact .k { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: #bcd0d8; font-weight: 800; }
 .fact .v { font-size: 1.05rem; font-weight: 800; color: #fff; margin-top: 0.15rem; }
+/* phones: shorter tour hero so the wide photo isn't blown up as much (no blue gap),
+   plus a darker overlay so the white text has enough contrast */
+@media (max-width: 600px) {
+  /* trim the TOP only (keeps the default bottom padding so the facts clear the wave) */
+  .tour-hero-inner { padding-block: 1rem 0.75rem; }
+  .facts { gap: 0.9rem 1.6rem; margin-top: 0.9rem; padding: 1rem 0 0.6rem; }
+  .tour-hero::after { background: linear-gradient(180deg, rgba(0,78,114,0.74) 0%, rgba(0,78,114,0.64) 45%, rgba(0,78,114,0.92) 100%); }
+}
 
 /* tour body layout */
 /* align-items: stretch lets the booking aside fill the column height, giving
@@ -506,6 +514,10 @@ ul { margin: 0; padding: 0; list-style: none; }
 .tour-gallery a.wide { grid-column: 1 / -1; aspect-ratio: 2 / 1; }
 .tour-gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
 .tour-gallery a:hover img { transform: scale(1.02); }
+/* desktop: gallery is a full-width row at the bottom of the tour-layout.
+   phones/tablets: the script relocates it into the prose, right under Tour Highlights. */
+.tour-layout > .tour-gallery { grid-column: 1 / -1; margin-top: clamp(2rem, 5vw, 3.5rem); }
+.prose > .tour-gallery { margin: clamp(2.75rem, 9vw, 4rem) 0 clamp(1.5rem, 5vw, 2.5rem); }
 
 /* directions + map */
 .directions { background: var(--cream-2); }

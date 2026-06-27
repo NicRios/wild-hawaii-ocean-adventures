@@ -175,6 +175,30 @@
     }
   }
 
+  /* --- Tour gallery placement: full-width row at the bottom of the tour-layout on
+     desktop; relocated into the prose, right under "Tour Highlights", on phones/tablets --- */
+  var tourLayout = document.querySelector(".tour-layout");
+  if (tourLayout) {
+    var gallery = tourLayout.querySelector(".tour-gallery");
+    var prose = tourLayout.querySelector(".prose");
+    var highlights = prose && prose.querySelector(".checklist"); // first checklist = Tour Highlights
+    if (gallery && prose && highlights) {
+      var galleryMq = window.matchMedia("(max-width: 900px)");
+      var placeGallery = function () {
+        if (galleryMq.matches) {
+          if (highlights.nextElementSibling !== gallery) {
+            highlights.parentNode.insertBefore(gallery, highlights.nextSibling);
+          }
+        } else if (gallery.parentNode !== tourLayout) {
+          tourLayout.appendChild(gallery);
+        }
+      };
+      placeGallery();
+      if (galleryMq.addEventListener) galleryMq.addEventListener("change", placeGallery);
+      else window.addEventListener("resize", placeGallery);
+    }
+  }
+
   /* --- Smooth-scroll for SAME-page anchor links (e.g. the home-page nav).
      Cross-page links like index.html#gallery don't match a[href^="#"], so they
      still load the page and jump to the section instantly. --- */
