@@ -624,9 +624,18 @@ ul { margin: 0; padding: 0; list-style: none; }
 .about-top .prose { padding-top: clamp(1.75rem, 3vw, 2.75rem); }
 .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(1.8rem, 4vw, 3.4rem); align-items: start; }
 .about-grid .prose p { color: var(--body); }
+/* keep the eyebrow blue — .about-grid .prose p (0,2,1) would otherwise grey it out */
+.about-grid .prose .eyebrow { color: var(--ocean-light); }
 .about-stack { display: grid; gap: 1rem; position: sticky; top: var(--nav-h); }
 .about-stack img { width: 100%; border-radius: 0; display: block; aspect-ratio: 3 / 2; object-fit: cover; box-shadow: var(--shadow-sm); }
-@media (max-width: 820px) { .about-grid { grid-template-columns: 1fr; } .about-stack { position: static; } }
+/* the lead image is a mobile-only copy of the top stack photo, shown under the heading */
+.about-lead { display: none; }
+@media (max-width: 820px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .about-stack { position: static; }
+  .about-lead { display: block; width: 100%; border-radius: 0; aspect-ratio: 3 / 2; object-fit: cover; box-shadow: var(--shadow-sm); margin: clamp(1.25rem, 4vw, 1.75rem) 0; }
+  .about-stack img:first-child { display: none; }
+}
 
 /* page intro band (Our Tours / About Us headers) */
 .page-intro { max-width: 64ch; }
