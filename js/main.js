@@ -89,8 +89,27 @@
     var btnPrev = scope.querySelector("[data-car-prev]");
     var btnNext = scope.querySelector("[data-car-next]");
     var dotsWrap = carousel.querySelector("[data-car-dots]");
-    var cards = track ? Array.prototype.slice.call(track.children) : [];
 
+    if (track) {
+      // collect every review once, then (re)group them into slides for the current
+      // breakpoint — 4 per slide (2x2) on desktop, 2 per slide on phones
+      var reviews = Array.prototype.slice.call(track.querySelectorAll(".review"));
+      var cards = [];
+      var perSlide = function () { return window.matchMedia("(max-width: 640px)").matches ? 2 : 4; };
+      var slideSize = -1;
+      var buildSlides = function () {
+        slideSize = perSlide();
+        track.innerHTML = "";
+        for (var s = 0; s < reviews.length; s += slideSize) {
+          var slide = document.createElement("div");
+          slide.className = "car-slide";
+          for (var k = s; k < s + slideSize && k < reviews.length; k++) slide.appendChild(reviews[k]);
+          track.appendChild(slide);
+        }
+        cards = Array.prototype.slice.call(track.children);
+      };
+      buildSlides();
+    }
     if (track && cards.length) {
       var stepSize = function () {
         var cs = getComputedStyle(track);
@@ -145,7 +164,11 @@
       var resizeTimer;
       window.addEventListener("resize", function () {
         clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(buildDots, 150);
+        resizeTimer = setTimeout(function () {
+          // re-group into 2- or 4-per-slide when crossing the phone breakpoint
+          if (perSlide() !== slideSize) { buildSlides(); track.scrollTo({ left: 0 }); }
+          buildDots();
+        }, 150);
       });
 
       buildDots();
